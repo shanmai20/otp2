@@ -1,70 +1,65 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Serverless OTP-System
 
-## Available Scripts
+Serverless OTP-System is a web application which is used to verify your 
+email by entering OTP.
 
-In the project directory, you can run:
+- First you have to enter your email in a signup page.
+- Then you will get 6 digit OTP to your email.
+- By entering the correct OTP you can navigate to next page.
+## screen shots
+![Sign Up Page](https://i.imgur.com/lcqMSqB.png)
+![verify page](https://i.imgur.com/oYmlV0G.png)
+![userdashboard page](https://i.imgur.com/yu9Jngk.png)
 
-### `npm start`
+## Hosted URL
+ can access the [website](https://serverlessless-otpsystem.netlify.app/) .
+ ## packages/libraries used in project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+we have developed our project by using aws cloud sevice as a backend 
+and React.js as front-end.
+## services used in aws
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ ### API Gateway
+ An API gateway is an API management tool that sits between
+a client and a collection of backend services.
 
-### `npm test`
+ ### Dyanomo db
+ DynamoDB is an Amazon Web Services database system that
+supports data structures and key-valued cloud services. It
+ allows users the benefit of auto-scaling, in-memory caching, backup 
+and restore options for all their internet-scale applications using DynamoDB.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Lambda function
+AWS Lambda is a serverless compute service that runs your code in
+ response to events and automatically manages the underlying compute resources for you.
 
-### `npm run build`
+ ## Tools/packages used in  Front-End 
+ ### React.js
+ React is a JavaScript library for building user interfaces. React is 
+ used to build single-page applications.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ### Material-UI 
+ Material-UI is simply a library that allows us to import and use different
+  components to create a user interface in our React applications.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ## Local Setup
+  ### Front-End 
+-   Clone this repository to your computer
+ -  Go to the Frontend folder and install all the dependencies using npm install.
+ -  Start the application using npm run.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ ### Back-End
 
-### `npm run eject`
+-  Make an AWS account.
+- Create a new lambda function for node.js and paste the [generateotp.js](src/Backend/generateotp.js) code into it.
+- Make another lambda function and paste the [verify.js](src/Backend/verify.js) code into it.
+- Make a DynamoDB table with Email as partition key. Add this DynamoDB as trigger to both the lambda functions after assigning them the DynamoDBFullAccess role.
+- Create a new AWS API gateway and integrate the methods with the respective lambda functions to get the desired endpoint URL.
+## Team members
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Team-17
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 2020BCS072 THOTA SHANMAI
+- 2020IMT008 BATCHALA ANAND
+- 2020BCS045 KAMMARI ANOOP
